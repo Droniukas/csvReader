@@ -1,5 +1,4 @@
 # csvReader
-full-stack mini-project :))
 Instructions:
 
 Install node, JDK and maven
