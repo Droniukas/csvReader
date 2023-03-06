@@ -4,7 +4,9 @@ Instructions:
 
 Install node, JDK and maven
 Download links: https://maven.apache.org/download.cgi
+
 https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html
+
 https://nodejs.org/en/download/
 
 1. Navigate to frontend dir
