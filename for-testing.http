@@ -11,8 +11,8 @@ Content-Type: application/json
   "phoneNum": "123456"
 }
 
-# eidt by id
-PUT http://localhost:8080/api/independent/edit/2
+# edit by id
+PUT http://localhost:8080/api/independent/edit/26
 Content-Type: application/json
 
 {
@@ -21,3 +21,5 @@ Content-Type: application/json
 
 # delete by id
 DELETE http://localhost:8080/api/independent/delete/3
+
+

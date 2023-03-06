@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
@@ -68,7 +69,37 @@ public class IndependentController {
         }
     }
 
+    @PostMapping("/upload")
+    public void importFile(@RequestParam MultipartFile csvFile) {
+        System.out.println("fdfd");
+    }
 
+//    @PostMapping("/upload")
+//    public String importCSV(@RequestParam("file") MultipartFile csvFile) {
+//        System.out.println("File name: " + csvFile.getOriginalFilename());
+//        System.out.println("File size: " + csvFile.getSize());
+//        List<Employee> importedEmployees;
+//        importedEmployees = convertToModel(csvFile);
+//        repository.saveAll(importedEmployees);
+//        return "Employees imported...";
+//    }
+//
+//    //Parse csv to model list
+//    public static List<Employee> convertToModel(MultipartFile file) {
+//        List<Employee> models;
+//        try (Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()))) {
+//            CsvToBean<?> csvToBean = new CsvToBeanBuilder(reader)
+//                    .withType(Employee.class)
+//                    .withIgnoreLeadingWhiteSpace(true)
+//                    .withIgnoreEmptyLine(true)
+//                    .build();
+//            models = (List<Employee>) csvToBean.parse();
+//        } catch (Exception ex) {
+//            //Log.error("error parsing csv file {} ", ex);d
+//            throw new IllegalArgumentException(ex.getCause().getMessage());
+//        }
+//        return models;
+//    }
 
 }
 
