@@ -22,3 +22,4 @@ https://nodejs.org/en/download/
 10. Open localhost:1234 in a web browser
 
 DONE! Now you can add csv files with three collumns via the 'Choose file button', there are also other extra features!
+(csv  file examples are included in the main folder)
