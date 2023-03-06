@@ -1,0 +1,166 @@
+package com.secondCourse.contentcalendar.Model;
+
+//import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import org.springframework.data.annotation.Id;
+
+import java.time.LocalDateTime;
+
+//@Table(value = "tbl_content")
+
+
+public record Content(
+        @Id
+        Integer id,
+        @NotEmpty
+        String title,
+        String desc,
+        Status status,
+        Type contentType,
+        LocalDateTime dateCreated,
+        LocalDateTime dateUpdated,
+        String url) {
+}
+
+
+//public class Content {
+////    @Id
+////    @SequenceGenerator(name = "content_id_sequence", sequenceName = "content_id_sequence", allocationSize = 1)
+////    @GeneratedValue(strategy = GenerationType.AUTO, generator = "content_id_sequence")
+//    private Integer id;
+//
+//    @NotEmpty
+//    private String title;
+//    private Integer views;
+//    private String desc;
+//    private Status status;
+//    private Type contentType;
+//    LocalDateTime dateCreated;
+//    private LocalDateTime dateUpdated;
+//    private String url;
+//
+//    public Content(Integer id,
+//                   String title,
+//                   Integer views,
+//                   String desc,
+//                   Status status,
+//                   Type contentType,
+//                   LocalDateTime dateCreated,
+//                   LocalDateTime dateUpdated,
+//                   String url) {
+//        this.id = id;
+//        this.title = title;
+//        this.views = views;
+//        this.desc = desc;
+//        this.status = status;
+//        this.contentType = contentType;
+//        this.dateCreated = dateCreated;
+//        this.dateUpdated = dateUpdated;
+//        this.url = url;
+//    }
+//
+//    public Content() {
+//    }
+//
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
+//
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public Integer getViews() {
+//        return views;
+//    }
+//
+//    public void setViews(Integer views) {
+//        this.views = views;
+//    }
+//
+//    public String getDesc() {
+//        return desc;
+//    }
+//
+//    public void setDesc(String desc) {
+//        this.desc = desc;
+//    }
+//
+//    public Status getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(Status status) {
+//        this.status = status;
+//    }
+//
+//    public Type getContentType() {
+//        return contentType;
+//    }
+//
+//    public void setContentType(Type contentType) {
+//        this.contentType = contentType;
+//    }
+//
+//    public LocalDateTime getDateCreated() {
+//        return dateCreated;
+//    }
+//
+//    public void setDateCreated(LocalDateTime dateCreated) {
+//        this.dateCreated = dateCreated;
+//    }
+//
+//    public LocalDateTime getDateUpdated() {
+//        return dateUpdated;
+//    }
+//
+//    public void setDateUpdated(LocalDateTime dateUpdated) {
+//        this.dateUpdated = dateUpdated;
+//    }
+//
+//    public String getUrl() {
+//        return url;
+//    }
+//
+//    public void setUrl(String url) {
+//        this.url = url;
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Content content = (Content) o;
+//        return Objects.equals(id, content.id) && Objects.equals(title, content.title) && Objects.equals(views, content.views) && Objects.equals(desc, content.desc) && status == content.status && contentType == content.contentType && Objects.equals(dateCreated, content.dateCreated) && Objects.equals(dateUpdated, content.dateUpdated) && Objects.equals(url, content.url);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, title, views, desc, status, contentType, dateCreated, dateUpdated, url);
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Content{" +
+//                "id=" + id +
+//                ", title='" + title + '\'' +
+//                ", vi=" + views +
+//                ", desc='" + desc + '\'' +
+//                ", status=" + status +
+//                ", contentType=" + contentType +
+//                ", dateCreated=" + dateCreated +
+//                ", dateUpdated=" + dateUpdated +
+//                ", url='" + url + '\'' +
+//                '}';
+//    }
+//}
+
+

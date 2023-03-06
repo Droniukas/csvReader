@@ -1,0 +1,23 @@
+# get all
+GET http://localhost:8080/api/independent
+
+# create new
+POST http://localhost:8080/api/independent
+Content-Type: application/json
+
+{
+  "name": "Juofdfdzas",
+  "email": "gmail@juozas",
+  "phoneNum": "123456"
+}
+
+# eidt by id
+PUT http://localhost:8080/api/independent/edit/2
+Content-Type: application/json
+
+{
+  "email": "EDITED MAIL!"
+}
+
+# delete by id
+DELETE http://localhost:8080/api/independent/delete/3

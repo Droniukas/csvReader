@@ -1,0 +1,101 @@
+.app {
+  text-align: center;
+  font-family: Arial;
+  position: relative;
+}
+
+.app > * {
+  margin: 10px;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: black;
+  grid-template-rows: minmax(min-content, max-content);
+  padding: 2px;
+  grid-gap: 2px;
+  border-radius: 10px;
+}
+
+.mainGrid > * {
+  padding: 5px;
+}
+
+/* .mainContentDiv {
+  border: 2px black solid;
+  border-radius: 10px;
+} */
+
+.addedContentDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: minmax(min-content, max-content);
+  padding: 2px;
+  grid-gap: 2px;
+  border-radius: 10px;
+  position: relative;
+  background-color: black;
+}
+
+
+.addedContentDiv > * {
+  padding: 5px;
+}
+
+.outerGridDiv {
+  width: 800px;
+  display: inline-block;
+}
+
+.column {
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.columnItem {
+  background-color: white;
+  word-break: break-all;
+  text-align: start;
+  border-radius: 10px;
+  padding-right: 50px;
+  border: 1px black solid;
+}
+
+.delBtn {
+  position: absolute;
+  right: 300px;
+
+}
+
+.storeFileBtn {
+  text-align: center;
+  margin: auto;
+}
+
+.singleDelBtn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: -25px;
+  top: 2px;
+  font-size: 15px;
+}
+
+.singleDelBtn:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.singleDelBtn:active {
+  background-color: rgba(0, 0, 0, 0.30);
+}
+
+
+
+
+
+
+

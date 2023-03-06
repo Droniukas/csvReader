@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script type="module" src="/main.js"></script>
+  <div id="app" class="app">
+    <p>CSV reader</p>
+    <input type="file" class="inputBtn" id="inputBtn" accept=".CSV">
+    <div class="storeFileBtnDiv" id="storeFileBtn">
+      <button class="storeFileBtn" id="storeFileBtn">Store file</button>
+      <button class="delBtn" id="delBtn">Delete all</button>
+    </div>
+    <div class="outerGridDiv">
+      <div id="mainGrid" class="mainGrid">
+        <div class="column">name</div>
+        <div class="column">email</div>
+        <div class="column">phoneNum</div>
+        <div class="column">dateAdded</div>
+      </div>
+      <div class="mainContentDiv" id="mainContentDiv">
+        <!-- What gets added -->
+      <!-- <div class="addedContentDiv" id="addedContentDiv">
+        <button class="singleDelBtn" id="singleDelBtn">&#10005</button>
+        <div class="columnItem" id="columnItem">name</div>
+        <div class="columnItem" id="columnItem">email@gmail.com</div>
+        <div class="columnItem" id="columnItem">+1212121</div>
+        <div class="columnItem" id="columnItem">2020-12-19 12:12:12</div>
+      </div> -->
+      <!-- end -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
