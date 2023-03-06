@@ -17,8 +17,8 @@ https://nodejs.org/en/download/
 
 6. Navigate to backend dir
 7. open terminal
-8. Mvn compile
-9. Mvn spring-boot:run
+8. run Mvn compile
+9. run Mvn spring-boot:run
 
 10. Open localhost:1234 in a web browser
 
