@@ -16,16 +16,12 @@
   padding: 2px;
   grid-gap: 2px;
   border-radius: 10px;
+  position: relative;
 }
 
 .mainGrid > * {
   padding: 5px;
 }
-
-/* .mainContentDiv {
-  border: 2px black solid;
-  border-radius: 10px;
-} */
 
 .addedContentDiv {
   display: grid;
@@ -54,19 +50,65 @@
   font-size: large;
 }
 
-.columnItem {
+/* for all divs in 'addedContentDiv' change style */
+
+div[class^="columnItem"] {
   background-color: white;
   word-break: break-all;
   text-align: start;
+  padding-right: 27px;
   border-radius: 10px;
-  padding-right: 50px;
   border: 1px black solid;
+  position: relative;
+
 }
+
+button[class^="edit"], button[class^="save"], button[class^="discard"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px;
+  padding: 0px;
+  border-radius: 10px;
+  width: 25px;
+  height: 25px;
+  font-size: 19px;
+  border: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.2);
+  transition: color 0.075s, font-size 0.075s, background-color 0.075s;
+  font-family: 'Segoe UI Symbol'
+}
+
+
+button[class^="edit"]:hover, button[class^="save"]:hover, button[class^="discard"]:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+button[class^="edit"]:active, button[class^="save"]:active, button[class^="discard"]:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+button[class^="save"] {
+  transform: rotate(0);
+}
+
+div[class^="text"] {
+  overflow-wrap: break-word;
+}
+
+button[class^="discard"] {
+  top: 25px;
+}
+
 
 .delBtn {
   position: absolute;
-  right: 300px;
-
+  top: -50px;
+  right: 0;
+  margin: 10px;
 }
 
 .storeFileBtn {
@@ -78,14 +120,18 @@
   background-color: transparent;
   border: none;
   position: absolute;
-  left: -25px;
-  top: 2px;
+  left: -30px;
+  top: 0px;
   font-size: 15px;
+  width: 25px;
+  height: 25px;
+  margin: 2px;
+  border-radius: 10px;
+  transition: background-color 0.075s;
 }
 
 .singleDelBtn:hover {
   background-color: rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -93,6 +139,74 @@
   background-color: rgba(0, 0, 0, 0.30);
 }
 
+.textarea {
+  border: none;
+  resize: none;
+  font-family: Arial;
+  font-size: 17px;
+  /* width: 100px; */
+}
+
+.textarea:active {
+  border: none;
+  resize: none;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.savePopUp {
+  position: fixed;
+  background-color: rgb(202, 202, 202);
+  display: inline-block;
+  padding: 4px;
+  font-family: Arial;
+  font-size: 11px;
+  border-radius: 2px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  bottom: 10px;
+  right: -200px;
+  transition: right 0.2s;
+  background-color: green;
+  color: white;
+}
+
+.discardPopUp {
+  position: fixed;
+  display: inline-block;
+  background-color: rgb(202, 202, 202);
+  padding: 4px;
+  font-family: Arial;
+  font-size: 11px;
+  border-radius: 2px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  bottom: 10px;
+  right: -200px;
+  transition: right 0.2s, top 0.2s;
+  background-color: red;
+  color: white;
+}
+
+
+.storeFilePopUp {
+  position: fixed;
+  display: inline-block;
+  background-color: rgb(202, 202, 202);
+  padding: 4px;
+  font-family: Arial;
+  font-size: 11px;
+  border-radius: 2px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  bottom: 10px;
+  left: -200px;
+  transition: right 0.2s, top 0.2s, bottom 0.2s, left 0.2s;
+  background-color: rgb(202, 202, 202);
+  color: black;
+}
 
 
 

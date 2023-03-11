@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS Independent (
     id INTEGER AUTO_INCREMENT,
     name varchar(255),
-    email varchar(255) NOT NULL,
-    phone_num varchar(255) NOT NULL,
+    email varchar(255),
+    phone_num varchar(255),
     date_created TIMESTAMP,
     primary key (id)
 );

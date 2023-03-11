@@ -1,0 +1,15 @@
+/* mistakes:
+    ☼ code is too procedural
+    ☼ "renderAll" and "createTextArea" function too long
+    ☼ there are repeating initilizations of variables, mostly of html 
+    elements like "document.getElementById.."
+*/
+
+/* takeaways:
+    ☼ async and promises can prevent alot of issues
+*/
+
+/*
+TODO:
+    ☼ store file PopUp false
+*/

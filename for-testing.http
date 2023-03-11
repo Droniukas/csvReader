@@ -12,14 +12,14 @@ Content-Type: application/json
 }
 
 # edit by id
-PUT http://localhost:8080/api/independent/edit/26
+PUT http://localhost:8080/api/independent/edit/1
 Content-Type: application/json
 
 {
-  "email": "EDITED MAIL!"
+  "phoneNum": "EDITED MAILdsdsd!"
 }
 
 # delete by id
-DELETE http://localhost:8080/api/independent/delete/3
+DELETE http://localhost:8080/api/independent/delete/2
 
 

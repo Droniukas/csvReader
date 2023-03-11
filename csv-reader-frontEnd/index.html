@@ -6,35 +6,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
-  <script type="module" src="/main.js"></script>
+  <script type="module" defer src="/main.js"></script>
   <div id="app" class="app">
     <p>CSV reader</p>
-    <input type="file" class="inputBtn" id="inputBtn" accept=".CSV">
-    <div class="storeFileBtnDiv" id="storeFileBtn">
-      <button class="storeFileBtn" id="storeFileBtn">Store file</button>
-      <button class="delBtn" id="delBtn">Delete all</button>
+    <input type="file" multiple class="inputBtn" id="inputBtn" accept=".CSV">
+    <div class="storeFileBtnDiv" id="storeFileBtnDiv">
+      <button class="storeFileBtn" id="storeFileBtn">Store file's</button>
     </div>
     <div class="outerGridDiv">
       <div id="mainGrid" class="mainGrid">
+        <button class="delBtn" id="delBtn">Delete all</button>
         <div class="column">name</div>
         <div class="column">email</div>
-        <div class="column">phoneNum</div>
-        <div class="column">dateAdded</div>
+        <div class="column">phone num</div>
+        <div class="column">date modified</div>
       </div>
       <div class="mainContentDiv" id="mainContentDiv">
         <!-- What gets added -->
       <!-- <div class="addedContentDiv" id="addedContentDiv">
         <button class="singleDelBtn" id="singleDelBtn">&#10005</button>
-        <div class="columnItem" id="columnItem">name</div>
-        <div class="columnItem" id="columnItem">email@gmail.com</div>
-        <div class="columnItem" id="columnItem">+1212121</div>
-        <div class="columnItem" id="columnItem">2020-12-19 12:12:12</div>
+        <div class="columnItemname" id="columnItemname">
+          <textarea rows="2" style="height:2em;" id="textarea" class="textarea">name</textarea>
+          <button class="saveTextname" id="saveTextname">&#xE10B;</button>
+          <button class="discardTextname" id="discardTextname">&#xE10A;</button>
+        </div>
+        <div class="columnItememail" id="columnItemEmail">
+          <div class="textemail" id="textemail">email@gmail.com</div>
+          <button class="editemail" id="editemail">&#10000;</button>
+        </div>
+        <div class="columnItemphoneNum" id="columnItemPhoneNum">
+          <div class="textphoneNum" id="textphoneNum">+1212121</div>
+          <button class="editphoneNum" id="editphoneNum">&#10000;</button>
+        </div>
+        <div class="columnItemdateCreated" id="columnItemDateCreated">
+          2020-12-19 12:12:12
+        </div>
       </div> -->
       <!-- end -->
       </div>
     </div>
   </div>
+  <div class="savePopUp" id="savePopUp">
+    Changes saved!
+  </div>
+  <div class="discardPopUp" id="discardPopUp">
+    Changes discarded
+  </div>
+  <div class="storeFilePopUp" id="storeFilePopUp">
+  </div>
 </body>
+
 </html>
+
