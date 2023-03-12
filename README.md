@@ -10,7 +10,7 @@ https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html
 https://nodejs.org/en/download/
 
 How to run app:
-1. Download repo
+1. Clone repo
 2. Run terminal
 3. Navigate to frontend dir
 4. Run npm i
