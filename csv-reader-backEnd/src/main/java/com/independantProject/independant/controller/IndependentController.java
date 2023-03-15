@@ -27,7 +27,6 @@ public class IndependentController {
         this.repository = repository;
     }
 
-
     @GetMapping("")
     public List<Independent> findAll() {
         return repository.findAll();
@@ -38,65 +37,73 @@ public class IndependentController {
         return repository.findAllByNameContains(name);
     }
 
-
     @PutMapping("/edit/{id}")
     public void editById(@PathVariable Integer id, @Valid @RequestBody Independent newItem) {
-        if (repository.existsById(id)) {
-            Independent oldItem = repository.findById(id).get();
-            if (newItem.name() != null && newItem.email() == null && newItem.phoneNum() == null) {
-                System.out.println("CHANGING NAME");
-                Independent resItem = new Independent(id,
-                        newItem.name(),
-                        oldItem.email(),
-                        oldItem.phoneNum(),
-                        LocalDateTime.now().toString());
-                repository.save(resItem);
-                return;
-            }
+        if (!repository.existsById(id)) {
+            // throw
+        }
 
-            if (newItem.name() == null && newItem.email() != null && newItem.phoneNum() == null) {
-                System.out.println("CHANGING EMAIL");
-                Independent resItem = new Independent(id,
-                        oldItem.name(),
-                        newItem.email(),
-                        oldItem.phoneNum(),
-                        LocalDateTime.now().toString());
-                repository.save(resItem);
-                return;
-            }
-            if (newItem.name() == null && newItem.email() == null && newItem.phoneNum() != null) {
-                System.out.println("CHANGING PHONE NUM");
-                Independent resItem = new Independent(id,
-                        oldItem.name(),
-                        oldItem.email(),
-                        newItem.phoneNum(),
-                        LocalDateTime.now().toString());
-                repository.save(resItem);
-                return;
-            }
-            else {
-                System.out.println("ALL VALUES OR MORE THAN ONE NOT NULL, CHANGING ALL");
-                Independent resItem = new Independent(id,
-                        newItem.name(),
-                        newItem.email(),
-                        newItem.phoneNum(),
-                        LocalDateTime.now().toString());
-                repository.save(resItem);
-            }
-            System.out.println("successful put request");
-        }
-        else {
-            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No content found");
-        }
+        Independent oldItem = repository.findById(id).get();
+
+        System.out.println("CHANGING NAME");
+        Independent resItem = new Independent(id,
+                newItem.name() != null ? newItem.name() : oldItem.name(),
+                newItem.email() != null ? newItem.email() : oldItem.email(),
+                newItem.phoneNum() != null ? newItem.phoneNum() : oldItem.phoneNum(),
+                LocalDateTime.now().toString());
+        repository.save(resItem);
+        // return;
+        // if (newItem.name() != null && newItem.email() == null && newItem.phoneNum()
+        // == null) {
+        // System.out.println("CHANGING NAME");
+        // Independent resItem = new Independent(id,
+        // newItem.name(),
+        // oldItem.email(),
+        // oldItem.phoneNum(),
+        // LocalDateTime.now().toString());
+        // repository.save(resItem);
+        // return;
+        // }
+
+        // if (newItem.name() == null && newItem.email() != null && newItem.phoneNum()
+        // == null) {
+        // System.out.println("CHANGING EMAIL");
+        // Independent resItem = new Independent(id,
+        // oldItem.name(),
+        // newItem.email(),
+        // oldItem.phoneNum(),
+        // LocalDateTime.now().toString());
+        // repository.save(resItem);
+        // return;
+        // }
+        // if (newItem.name() == null && newItem.email() == null && newItem.phoneNum()
+        // != null) {
+        // System.out.println("CHANGING PHONE NUM");
+        // Independent resItem = new Independent(id,
+        // oldItem.name(),
+        // oldItem.email(),
+        // newItem.phoneNum(),
+        // LocalDateTime.now().toString());
+        // repository.save(resItem);
+        // // return;
+        // // }
+        // else {
+        // System.out.println("ALL VALUES OR MORE THAN ONE NOT NULL, CHANGING ALL");
+        // Independent resItem = new Independent(id,
+        // newItem.name(),
+        // newItem.email(),
+        // newItem.phoneNum(),
+        // LocalDateTime.now().toString());
+        // repository.save(resItem);
+        // }
+        System.out.println("successful put request");
     }
-
 
     @DeleteMapping(value = "/delete/{id}")
     public void delete(@PathVariable Integer id) {
         if (repository.existsById(id)) {
             repository.deleteById(id);
-        }
-        else {
+        } else {
             throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No content found");
         }
     }
@@ -106,10 +113,10 @@ public class IndependentController {
         repository.deleteAll();
     }
 
-
     @PostMapping("")
     public void add(@Valid @RequestBody Independent items) {
-        Independent newItem = new Independent(null, items.name(), items.email(), items.phoneNum(), LocalDateTime.now().toString());
+        Independent newItem = new Independent(null, items.name(), items.email(), items.phoneNum(),
+                LocalDateTime.now().toString());
         repository.save(newItem);
         System.out.println("Successful post request");
     }
@@ -126,6 +133,7 @@ public class IndependentController {
 
         return "Success";
     }
+
     private void convertToModelObj(List<Record> RecordList) {
         RecordList.forEach(record -> {
             Independent item = new Independent(
@@ -138,18 +146,14 @@ public class IndependentController {
         });
     }
 
-
-//    FOR TESTING
-//    @PostMapping(value = "/uploadFile")
-//    public void testData(@RequestPart("file") MultipartFile csvFile) throws Exception {
-//        InputStream inputStream = csvFile.getInputStream();
-//        Scanner s = new Scanner(inputStream).useDelimiter("\\A");
-//        String result = s.hasNext() ? s.next() : "";
-//        System.out.println(result);
-//    }
-
-
-
+    // FOR TESTING
+    // @PostMapping(value = "/uploadFile")
+    // public void testData(@RequestPart("file") MultipartFile csvFile) throws
+    // Exception {
+    // InputStream inputStream = csvFile.getInputStream();
+    // Scanner s = new Scanner(inputStream).useDelimiter("\\A");
+    // String result = s.hasNext() ? s.next() : "";
+    // System.out.println(result);
+    // }
 
 }
-

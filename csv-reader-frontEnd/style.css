@@ -144,6 +144,7 @@ button[class^="discard"] {
   resize: none;
   font-family: Arial;
   font-size: 17px;
+  height:1em;
   /* width: 100px; */
 }
 

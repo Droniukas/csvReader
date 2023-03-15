@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  
-</head>
-<body>
-  <script type="module" defer src="main.js"></script>
-  <div id="app" class="app">
-    <p>CSV reader</p>
-    <input type="file" multiple class="inputBtn" id="inputBtn" accept=".CSV">
-    <div class="storeFileBtnDiv" id="storeFileBtnDiv">
-      <button class="storeFileBtn" id="storeFileBtn">Store file's</button>
-    </div>
-    <div class="outerGridDiv">
-      <div id="mainGrid" class="mainGrid">
-        <button class="delBtn" id="delBtn">Delete all</button>
-        <div class="column">name</div>
-        <div class="column">email</div>
-        <div class="column">phone num</div>
-        <div class="column">date modified</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script type="module" defer src="main.js"></script>
+    <div id="app" class="app">
+      <p>CSV reader</p>
+      <input
+        type="file"
+        multiple
+        class="inputBtn"
+        id="inputBtn"
+        accept=".CSV"
+      />
+      <div class="storeFileBtnDiv" id="storeFileBtnDiv">
+        <button class="storeFileBtn" id="storeFileBtn">Store file's</button>
       </div>
-      <div class="mainContentDiv" id="mainContentDiv">
-        <!-- What gets added -->
-      <!-- <div class="addedContentDiv" id="addedContentDiv">
+      <div class="outerGridDiv">
+        <div id="mainGrid" class="mainGrid">
+          <button class="delBtn" id="delBtn">Delete all</button>
+          <div class="column">name</div>
+          <div class="column">email</div>
+          <div class="column">phone num</div>
+          <div class="column">date modified</div>
+        </div>
+        <div class="mainContentDiv" id="mainContentDiv">
+          <!-- What gets added -->
+          <!-- <div class="addedContentDiv" id="addedContentDiv">
         <button class="singleDelBtn" id="singleDelBtn">&#10005</button>
         <div class="columnItemname" id="columnItemname">
           <textarea rows="2" style="height:2em;" id="textarea" class="textarea">name</textarea>
@@ -45,19 +50,12 @@
           2020-12-19 12:12:12
         </div>
       </div> -->
-      <!-- end -->
+          <!-- end -->
+        </div>
       </div>
     </div>
-  </div>
-  <div class="savePopUp" id="savePopUp">
-    Changes saved!
-  </div>
-  <div class="discardPopUp" id="discardPopUp">
-    Changes discarded
-  </div>
-  <div class="storeFilePopUp" id="storeFilePopUp">
-  </div>
-</body>
-
+    <div class="savePopUp" id="savePopUp">Changes saved!</div>
+    <div class="discardPopUp" id="discardPopUp">Changes discarded</div>
+    <div class="storeFilePopUp" id="storeFilePopUp"></div>
+  </body>
 </html>
-
